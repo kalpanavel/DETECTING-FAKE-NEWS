@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+	<style>
+		body{
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	background-color:#f4f3f3;
+}
+
+.container{
+	width:100%;
+	margin: auto;
+	overflow: hidden;
+}
+
+header{
+	background:purple;
+	border-bottom:purple 3px solid;
+	height:120px;
+	width:100%;
+	padding-top:30px;
+
+}
+
+.main-header{
+			text-align:center;
+			background-color: purple;
+			height:100px;
+			width:100%;
+			margin:0px;
+		}
+#brandname{
+	float:left;
+	font-size:30px;
+	color: #fff;
+	margin: 10px;
+}
+
+header h2{
+	text-align:center;
+	color:#fff;
+
+}
+
+
+
+.btn-info {background-color: purple;
+	height:40px;
+	width:100px;} 
+.btn-info:hover {background: purple;}
+
+
+.resultss{
+	border-radius: 15px 50px;
+    background: purple;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+	</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<header>
+		<div class="container" align="center" >
+		<div id="brandname">
+			MACHINE LEARNING
+		</div>
+		<h2>Fake News Detection</h2>
+
+	</div>
+	</header>
+
+
+	<div class="results" align="center" style="margin-bottom: 100%;">
+
+
+	{% if prediction == 1%}
+	<h1 style="color:black;">REAL</h1>
+	{% elif prediction == 0%}
+	<h1 style="color:black;">FAKE</h1>
+	
+	{% endif %}
+
+	</div>
+
+</body>
+</html>
